@@ -20,11 +20,10 @@ module.exports = function(deployer) {
   const endTime = startTime + duration.weeks(4);
   const rate = 1000;
   const wallet = "0x9fB0C7b98c7Db7C0543eE74209010b8A7ff303C6";
-  const softCap = web3.toWei('10000', 'ether');
-  const hardCap = web3.toWei('1000000', 'ether');
+  const softCap = web3.toWei('10', 'ether');
+  const hardCap = web3.toWei('100', 'ether');
 
   console.log([startTime, endTime, rate, wallet, softCap, hardCap]);
 
   deployer.deploy(ABCCrowdsale, startTime, endTime, rate, wallet,softCap,hardCap);
-  deployer.deploy(ABC);
 };
